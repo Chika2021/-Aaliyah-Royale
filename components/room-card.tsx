@@ -60,9 +60,9 @@ export function RoomCard({
               </span>
             </div>
           </div>
-          <div className="text-right">
-            <p className="text-3xl font-bold text-primary">₦{price.toLocaleString()}</p>
-            <p className="text-sm text-muted-foreground">per night</p>
+          <div className="text-right shrink-0">
+            <p className="text-lg font-bold text-primary sm:text-xl">₦{price.toLocaleString()}</p>
+            <p className="text-xs text-muted-foreground">per night</p>
           </div>
         </div>
 

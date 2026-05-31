@@ -70,10 +70,10 @@ const featuredRooms = [
 export default function Home() {
   return (
     <>
-      <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative h-screen w-full overflow-hidden">
+        <section className="relative h-[100svh] min-h-[500px] w-full overflow-hidden">
+          <Header />
           <Image
             src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=90"
             alt="Aaliyah Royale Hotel"
@@ -86,15 +86,15 @@ export default function Home() {
           
           {/* Content */}
           <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-            <h1 className="text-balance text-5xl font-bold text-white drop-shadow-lg sm:text-6xl lg:text-7xl">
+            <h1 className="text-balance text-4xl font-bold text-white drop-shadow-lg sm:text-6xl lg:text-7xl">
               Aaliyah Royale
             </h1>
-            <p className="mt-4 text-balance text-xl text-white drop-shadow-md sm:text-2xl">
+            <p className="mt-3 text-balance text-base text-white drop-shadow-md sm:text-xl md:text-2xl">
               Experience Luxury Redefined
             </p>
             <Link
               href="/rooms"
-              className="mt-8 rounded-lg bg-primary px-8 py-3 text-lg font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="mt-6 rounded-lg bg-primary px-6 py-3 text-base font-semibold text-primary-foreground hover:bg-primary/90 transition-colors sm:mt-8 sm:px-8 sm:text-lg"
             >
               Book Your Stay
             </Link>
@@ -102,29 +102,29 @@ export default function Home() {
         </section>
 
         {/* Amenities Section */}
-        <section className="py-20 px-4 bg-background sm:px-6 lg:px-8">
+        <section className="py-12 px-4 bg-background sm:py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
-              <h2 className="text-balance text-4xl font-bold text-foreground sm:text-5xl">
+              <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
                 World-Class Amenities
               </h2>
-              <p className="mt-4 text-balance text-lg text-muted-foreground">
+              <p className="mt-3 text-balance text-base text-muted-foreground sm:mt-4 sm:text-lg">
                 Indulge in our premium facilities designed for your ultimate comfort and relaxation
               </p>
             </div>
 
-            <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-10 grid grid-cols-2 gap-4 sm:mt-16 sm:gap-8 lg:grid-cols-4">
               {amenities.map((amenity) => {
                 const Icon = amenity.icon;
                 return (
-                  <div key={amenity.title} className="rounded-xl border border-border bg-card p-8 text-center hover:shadow-lg transition-shadow">
+                  <div key={amenity.title} className="rounded-xl border border-border bg-card p-5 text-center hover:shadow-lg transition-shadow sm:p-8">
                     <div className="flex justify-center">
-                      <div className="rounded-full bg-primary/10 p-4">
-                        <Icon className="h-8 w-8 text-primary" />
+                      <div className="rounded-full bg-primary/10 p-3 sm:p-4">
+                        <Icon className="h-6 w-6 text-primary sm:h-8 sm:w-8" />
                       </div>
                     </div>
-                    <h3 className="mt-4 text-xl font-bold text-foreground">{amenity.title}</h3>
-                    <p className="mt-2 text-muted-foreground">{amenity.description}</p>
+                    <h3 className="mt-3 text-base font-bold text-foreground sm:mt-4 sm:text-xl">{amenity.title}</h3>
+                    <p className="mt-1 text-xs text-muted-foreground sm:mt-2 sm:text-sm">{amenity.description}</p>
                   </div>
                 );
               })}
@@ -133,27 +133,27 @@ export default function Home() {
         </section>
 
         {/* Featured Rooms Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <section className="py-12 px-4 sm:py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
-              <h2 className="text-balance text-4xl font-bold text-foreground sm:text-5xl">
+              <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
                 Our Rooms
               </h2>
-              <p className="mt-4 text-balance text-lg text-muted-foreground">
+              <p className="mt-3 text-balance text-base text-muted-foreground sm:mt-4 sm:text-lg">
                 Choose from our selection of luxurious accommodations
               </p>
             </div>
 
-            <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-6 sm:mt-16 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {featuredRooms.map((room) => (
                 <RoomCard key={room.id} {...room} />
               ))}
             </div>
 
-            <div className="mt-12 text-center">
+            <div className="mt-10 text-center sm:mt-12">
               <Link
                 href="/rooms"
-                className="inline-block rounded-lg border-2 border-primary px-8 py-3 font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="inline-block rounded-lg border-2 border-primary px-6 py-3 font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-colors sm:px-8"
               >
                 View All Rooms
               </Link>
@@ -162,17 +162,17 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+        <section className="py-12 px-4 sm:py-20 sm:px-6 lg:px-8 bg-secondary">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-balance text-4xl font-bold text-secondary-foreground sm:text-5xl">
+            <h2 className="text-balance text-3xl font-bold text-secondary-foreground sm:text-4xl lg:text-5xl">
               Ready to Experience Luxury?
             </h2>
-            <p className="mt-4 text-balance text-lg text-secondary-foreground/90">
+            <p className="mt-3 text-balance text-base text-secondary-foreground/90 sm:mt-4 sm:text-lg">
               Book your perfect getaway at Aaliyah Royale and create unforgettable memories
             </p>
             <Link
               href="/rooms"
-              className="mt-8 inline-block rounded-lg bg-primary px-8 py-3 text-lg font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="mt-6 inline-block rounded-lg bg-primary px-6 py-3 text-base font-semibold text-primary-foreground hover:bg-primary/90 transition-colors sm:mt-8 sm:px-8 sm:text-lg"
             >
               Start Booking Now
             </Link>
