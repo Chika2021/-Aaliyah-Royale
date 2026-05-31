@@ -1,6 +1,17 @@
+import { Suspense } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { BookingForm } from '@/components/booking-form';
+
+function BookingFormFallback() {
+  return (
+    <div className="animate-pulse space-y-6">
+      <div className="h-12 bg-muted rounded-lg" />
+      <div className="h-12 bg-muted rounded-lg" />
+      <div className="h-12 bg-muted rounded-lg" />
+    </div>
+  );
+}
 
 export default function BookingPage() {
   return (
@@ -17,7 +28,9 @@ export default function BookingPage() {
             </p>
           </div>
 
-          <BookingForm />
+          <Suspense fallback={<BookingFormFallback />}>
+            <BookingForm />
+          </Suspense>
         </div>
       </main>
       <Footer />
